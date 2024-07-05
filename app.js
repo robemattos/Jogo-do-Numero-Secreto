@@ -16,7 +16,7 @@ function exibirTextoNaTela(tag, texto) {
     /////////////// Função que torna o jogo responsivo, ela permite que o programa fale com o usuário.
     /////////////// FSão passados como parâmetro o texto, idioma entre aspas ("" ou '') e a velocidade
     /////////////// de narração do texto, através do método "rate".
-    responsiveVoice.speak(texto, 'Brazilian Portuguese female', {rate: 1.2});
+    responsiveVoice.speak(texto, 'Brazilian Portuguese Female', {rate: 1.2});
 }
 
 /////////////// Função que exibe o texto da tela inicial do jogo
