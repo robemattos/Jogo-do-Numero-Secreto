@@ -5,8 +5,9 @@
 //paragrafo.innerHTML = 'Escolha um Número entre 1 e 10';
 
 let listaDeNumerosSorteados = []; // Cria uma lista vazia aonde serão armazenados os números sorteados
-let numeroLimite = 10; // Range de números a serem sorteados (Ex: de 1 a 10)
+let numeroLimite = prompt('Informe um número máximo inteiro para estabelecer o limite');//10; // Range de números a serem sorteados (Ex: de 1 a 10)
 let numeroSecreto = gerarNumeroAleatorio(); // Gera um número secreto aleatório
+console.log(numeroSecreto);
 let tentativas = 1; // Conta o número de tentativas do jogador
 
 /////////////// Função que fará o controle dos textos exibidos na tela do jogo
@@ -21,8 +22,9 @@ function exibirTextoNaTela(tag, texto) {
 
 /////////////// Função que exibe o texto da tela inicial do jogo
 function exibirMensagemInicial() {
+    //let numeroLimite = prompt(`Informe um número máximo inteiro para estabelecer o limite`);
     exibirTextoNaTela('h1', 'Jogo do Número Secreto');
-    exibirTextoNaTela('p', 'Escolha um Número entre 1 e 10');
+    exibirTextoNaTela('p', `Escolha um Número entre 1 e ${numeroLimite}`);
 }
 
 exibirMensagemInicial();
@@ -75,9 +77,12 @@ function limparCampo() {
 
 /////////////// Função que reinicia o jogo tota vez que o botão "Novo jogo" é clicado
 function reiniciarJogo() {
-    numeroSecreto = gerarNumeroAleatorio();
+    
+    //numeroSecreto = gerarNumeroAleatorio();
     limparCampo();
     tentativas = 1;
+    numeroLimite = prompt('Informe um número máximo inteiro para estabelecer o limite');
+    numeroSecreto = gerarNumeroAleatorio();
     exibirMensagemInicial();
     document.getElementById('reiniciar').setAttribute('disabled', true);
 }
